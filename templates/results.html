@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<title>Kelompok 5 - Data Mining</title>
+	<meta content="" name="description" />
+	<meta content="" name="keywords" />
+
+	<!-- Favicons -->
+	<link href="{{url_for('static',filename='assets/img/favicon.ico')}}" rel="icon" />
+	<link href="{{url_for('static',filename='assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon" />
+	<link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static',filename='assets/img/favicon-32x32.png')}}" />
+	<link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static',filename='assets/img/favicon-16x16.png')}}" />
+	<link rel="mask-icon" href="{{url_for('static',filename='assets/img/safari-pinned-tab.svg')}}" color="#5bbad5" />
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet" />
+
+	<!-- Vendor CSS Files -->
+	<link href="{{url_for('static',filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
+	<link href="{{url_for('static',filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+	<style>
+		body {
+			background: url("{{url_for('static',filename='assets/img/gedung_unjaya.webp')}}");
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-attachment: fixed;
+		}
+		.header {
+			position: fixed;
+			z-index: 10;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header container">
+		<form action="/search" method="get" role="form">
+			<div class="input-group mb-5">
+				<input  name="query" type="search" class="form-control" placeholder="Silahkan masukkan kata kunci" aria-label="Kata Kunci" aria-describedby="basic-addon2">
+				<span class="input-group-text p-0" id="basic-addon2"><input class="btn btn-outline-secondary" type="submit" value="Cari"></span>
+			</div>
+		</form>
+	</div>
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-12 m-3">
+				<h2>Hasil pencarian untuk kata kunci "<strong>{{ query }}</strong>"</h2>
+			</div>
+			{% for index, row in data.iterrows() %}
+			<div class="col-lg-4 col-md-12 mb-4">
+				<div class="card">
+					<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+						<img src="{{ row['linkImg'] }}" class="img-fluid" />
+						<a href="#!">
+							<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+						</a>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">{{ row['title'] }}</h5>
+						<p class="card-text">{{ row['shortDescription'] }}</p>
+						<a target="_blank" class="stretched-link" href="{{ row['articleLink'] }}">Read More</a><br />
+						<button type="button" class="btn text-bg-info col-12">
+							Similaritas <span class="badge text-bg-warning">{{ "%.3f" % row['cosineSimilarity'] }}</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<!-- Vendor JS Files -->
+  <script src="{{url_for('static',filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+</body>
+</html>

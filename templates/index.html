@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Kelompok 5 - Data Mining</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static',filename='assets/img/favicon.ico')}}" rel="icon">
+  <link href="{{url_for('static',filename='assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static',filename='assets/img/favicon-32x32.png')}}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static',filename='assets/img/favicon-16x16.png')}}">
+  <link rel="mask-icon" href="{{url_for('static',filename='assets/img/safari-pinned-tab.svg')}}" color="#5bbad5">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static',filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static',filename='assets/css/style.css')}}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="" class="d-flex align-items-center">
+  </header>
+  <!-- End #header -->
+
+  <main id="main">
+    <div id="head" class="d-flex align-items-center">
+      <div class="container d-flex flex-column align-items-center">
+
+        <h1>Kelompok 5</h1>
+        <h2>Data Mining - Universitas Jenderal Achmad Yani Yogyakarta</h2>
+        <div class="countdown d-flex justify-content-center" data-count="2023/12/5">
+          <div>
+            <h3>%h</h3>
+            <h4>Hours</h4>
+          </div>
+          <div>
+            <h3>%m</h3>
+            <h4>Minutes</h4>
+          </div>
+          <div>
+            <h3>%s</h3>
+            <h4>Seconds</h4>
+          </div>
+        </div>
+  
+        <div class="search-field">
+          <h4>Masukkan Kata Kunci yang ingin dicari</h4>
+          <form action="search" method="get" role="form">
+            <div class="search-field-form">
+              <div class="rows">
+                <div class="col-9">
+                  <input class="form-control" type="search" name="query">
+                </div>
+              </div>
+              
+              <input type="submit" value="Search">
+            </div>
+            <div class="mt-2">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your notification request was sent. Thank you!</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span id="current-year"></span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Kelompok 5 - Data Mining
+      </div>
+    </div>
+  </footer>
+  <!-- End #footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static',filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+
+</body>
+
+</html>
